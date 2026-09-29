@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduLearn – Learn Anytime, Anywhere</title>
+  <meta name="description" content="EduLearn offers online courses taught by expert teachers." />
+
+  <!-- Google Fonts (falls back to system fonts if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ WELCOME POPUP (opened by script.js on load) ============ -->
+  <div class="modal" id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" hidden>
+    <div class="modal-box">
+      <h2 id="welcomeTitle">Welcome to EduLearn 👋</h2>
+      <p>Browse our courses, meet the teachers, and start learning today.</p>
+      <button class="btn btn-primary" id="closeModal">Start exploring</button>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="top">
+    <div class="container nav-bar">
+      <!-- Logo + site name -->
+      <a href="#home" class="logo" aria-label="EduLearn home">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+          <rect width="34" height="34" rx="9" fill="var(--brand)" />
+          <path d="M6 13l11-5 11 5-11 5z" fill="var(--accent)" />
+          <path d="M10 17v5c0 2 3.5 4 7 4s7-2 7-4v-5l-7 3z" fill="#fff" />
+        </svg>
+        <span>EduLearn</span>
+      </a>
+
+      <!-- Navigation menu -->
+      <nav id="navMenu" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#teachers">Teachers</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark mode toggle -->
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <!-- Mobile menu toggle (hamburger) -->
+        <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Learn Anytime, Anywhere</h1>
+          <p>Online education puts great teachers in your pocket. Study at your own pace, revisit lessons whenever you need, and build skills that count, from your laptop or your phone.</p>
+          <a href="#courses" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="https://picsum.photos/seed/edulearn-hero/700/520" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COURSES ============ -->
+    <section class="section" id="courses">
+      <div class="container">
+        <h2 class="section-title">Popular courses</h2>
+
+        <!-- Search box: filtered live by script.js -->
+        <div class="search-wrap">
+          <label for="courseSearch" class="sr-only">Search courses</label>
+          <input type="search" id="courseSearch" placeholder="Search courses, e.g. Python" autocomplete="off" />
+        </div>
+
+        <div class="grid courses-grid" id="courseGrid">
+          <!-- Each card: image, title, description, duration, enroll button -->
+          <article class="card course">
+            <img src="https://picsum.photos/seed/web-dev/600/380" alt="Laptop showing code" loading="lazy" />
+            <div class="card-body">
+              <h3>Web Development Basics</h3>
+              <p>Build your first responsive websites with HTML, CSS and JavaScript.</p>
+              <div class="card-foot"><span class="duration">⏱ 8 weeks</span><button class="btn btn-small enroll">Enroll</button></div>
+            </div>
+          </article>
+
+          <article class="card course">
+            <img src="https://picsum.photos/seed/python/600/380" alt="Programming on a screen" loading="lazy" />
+            <div class="card-body">
+              <h3>Python for Beginners</h3>
+              <p>Learn programming from scratch by solving small, practical problems.</p>
+              <div class="card-foot"><span class="duration">⏱ 6 weeks</span><button class="btn btn-small enroll">Enroll</button></div>
+            </div>
+          </article>
+
+          <article class="card course">
+            <img src="https://picsum.photos/seed/data-science/600/380" alt="Charts on a monitor" loading="lazy" />
+            <div class="card-body">
+              <h3>Data Science Essentials</h3>
+              <p>Clean data, spot patterns and present findings with clear charts.</p>
+              <div class="card-foot"><span class="duration">⏱ 10 weeks</span><button class="btn btn-small enroll">Enroll</button></div>
+            </div>
+          </article>
+
+          <article class="card course">
+            <img src="https://picsum.photos/seed/design/600/380" alt="Design sketches on a desk" loading="lazy" />
+            <div class="card-body">
+              <h3>UI/UX Design</h3>
+              <p>Research users, sketch flows and design interfaces people enjoy using.</p>
+              <div class="card-foot"><span class="duration">⏱ 7 weeks</span><button class="btn btn-small enroll">Enroll</button></div>
+            </div>
+          </article>
+
+          <article class="card course">
+            <img src="https://picsum.photos/seed/marketing/600/380" alt="Team planning a campaign" loading="lazy" />
+            <div class="card-body">
+              <h3>Digital Marketing</h3>
+              <p>Plan campaigns, grow an audience and measure what actually works.</p>
+              <div class="card-foot"><span class="duration">⏱ 5 weeks</span><button class="btn btn-small enroll">Enroll</button></div>
+            </div>
+          </article>
+
+          <article class="card course">
+            <img src="https://picsum.photos/seed/english/600/380" alt="Notebook and pen" loading="lazy" />
+            <div class="card-body">
+              <h3>Spoken English</h3>
+              <p>Speak confidently at work and in daily life with guided practice.</p>
+              <div class="card-foot"><span class="duration">⏱ 12 weeks</span><button class="btn btn-small enroll">Enroll</button></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Shown when the search finds nothing -->
+        <p class="no-results" id="noResults" hidden>No courses match your search. Try a different word.</p>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section alt" id="about">
+      <div class="container">
+        <h2 class="section-title">Why learn with EduLearn</h2>
+        <div class="grid features-grid">
+          <div class="card feature"><div class="f-icon">🎓</div><h3>Expert Teachers</h3><p>Every course is led by working professionals with years of teaching experience.</p></div>
+          <div class="card feature"><div class="f-icon">💻</div><h3>Online Classes</h3><p>Join live sessions or watch recordings from any device, wherever you are.</p></div>
+          <div class="card feature"><div class="f-icon">📜</div><h3>Certificates</h3><p>Finish a course and get a certificate you can share with employers.</p></div>
+          <div class="card feature"><div class="f-icon">⏰</div><h3>Flexible Learning</h3><p>Fit lessons around your day. Pause, replay and learn at your own speed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEACHERS ============ -->
+    <section class="section" id="teachers">
+      <div class="container">
+        <h2 class="section-title">Meet our teachers</h2>
+        <div class="grid teachers-grid">
+          <article class="card teacher"><img src="https://i.pravatar.cc/300?img=47" alt="Portrait of Priya Raman" loading="lazy" /><h3>Priya Raman</h3><p>Web Development</p></article>
+          <article class="card teacher"><img src="https://i.pravatar.cc/300?img=12" alt="Portrait of Arjun Mehta" loading="lazy" /><h3>Arjun Mehta</h3><p>Data Science</p></article>
+          <article class="card teacher"><img src="https://i.pravatar.cc/300?img=32" alt="Portrait of Sara Thomas" loading="lazy" /><h3>Sara Thomas</h3><p>UI/UX Design</p></article>
+          <article class="card teacher"><img src="https://i.pravatar.cc/300?img=15" alt="Portrait of Daniel Joseph" loading="lazy" /><h3>Daniel Joseph</h3><p>Spoken English</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section alt" id="contact">
+      <div class="container contact-wrap">
+        <h2 class="section-title">Get in touch</h2>
+        <!-- novalidate: we validate with JavaScript instead of the browser's default -->
+        <form id="contactForm" class="card form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" />
+            <small class="error" id="nameError"></small>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+            <small class="error" id="emailError"></small>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <small class="error" id="messageError"></small>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-success" id="formSuccess" role="status" hidden>Thanks! Your message has been sent.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> EduLearn. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.5 22v-8h2.7l.5-3.3h-3.2V8.6c0-1 .4-1.7 1.8-1.7h1.5V4.1C16.1 4 15.2 4 14.2 4c-2.6 0-4.3 1.6-4.3 4.4v2.3H7v3.3h2.9v8z"/></svg></a>
+        <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.8 3h3l-6.5 7.5L22 21h-6l-4.7-6.1L5.9 21h-3l7-8L2.5 3h6.1l4.2 5.6zm-1 16.2h1.7L7.7 4.7H5.9z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.200 5 12 5 12 5s-6.200 0-7.800.4a2.500 2.500 0 0 0-1.800 1.800C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
